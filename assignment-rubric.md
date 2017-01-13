@@ -1,3 +1,8 @@
+---
+layout: default
+title: Assignment Rubric
+author: Graham Hemingway
+---
 # 3251 Homework Assignment Grading Rubric
 
 All homework assignments involve C++ programming.  We expect you to be good C++ programmers since all of you should have taken CS2201 (or equivalent).

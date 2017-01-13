@@ -20,6 +20,15 @@ description: > # this means to ignore newlines until "baseurl:"
 github:
   url: ""
 
+navbar_links: [
+  {"url": "/", "text": "homepage"},
+  {"url": "/assignment-rubric", "text": "rubric"},
+  {"url": "/style-guidelines", "text": "style"},
+]
+
+permalink: pretty
+exclude: ["README.md"]
+
 # Build settings
 markdown: kramdown
 kramdown:
