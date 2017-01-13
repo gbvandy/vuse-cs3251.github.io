@@ -20,7 +20,7 @@ In general (no matter what programming language), your code must be
 * **consistent**: any convention you apply in your code should be applied consistently throughout your code;
 * **well-structured**: add exactly as much complexity to your code as it needs - if a function should be broken up, break it up, and if you should have another layer of abstraction, add it - but be sure to stop and ask yourself if your code *should* be written that way;
 * **self-documenting**: use informative names that tell us what purpose a variable serves, what a function returns, etc.;
-* **commented meaningfully**: comments are a *supplement* to your code and should enhance the reader's understanding of your code - explaining yourself is good, and it's even better if you don't have to; and
+* **commented meaningfully**: comments are a *supplement* to your code and should enhance the reader's understanding of your code - explaining yourself is good (particularly when the code at hand is very complex, see [this example in the illumos source code](https://github.com/illumos/illumos-gate/blob/f7877f5d39900cfd8b20dd673e5ccc1ef7cc7447/usr/src/uts/common/os/turnstile.c#L142-L160)), and it's even better if you don't have to; and
 * **readable**: it should be easy to understand your code simply by reading it, c.f.:
 
   ~~~ c++
