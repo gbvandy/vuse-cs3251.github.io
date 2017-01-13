@@ -119,46 +119,16 @@ Note that
 
 Classes must be split between two files: a `.h` containing only their declaration (the specification of the class's interface, fields, etc.) and a `.cpp`  containing only their definition (i.e. implementation of methods, etc.).
 
-For the time being, it is acceptable to both declare and define a template class in the `.h` file.
-
 ## Header and Code Files
 
 The use of both `.h` and `.cpp` files for the same bodies of code means that there are a number of stylistic concerns that must be managed:
 
 * No file should contain code for more than one class.
-* The `.h` and `.cpp` for the same class should bear a filename which matches the name of said class.
+* The `.h` and `.cpp` for the same class should have matching filenames which also match the name of said class.
 * The order of member fields and functions should be preserved between the `.h` and the `.cpp` files.
-* Declarations of member functions in `.h` files should include the same parameter names used in the `.cpp` file.
-
-## Header Files
-
-All header files must use `#include` guards (a.k.a. `#define` guards) and must be named as `NAMESPACE_CLASS_H`, c.f.
-
-~~~ c++
-#ifndef NAME_FOO_H
-#define NAME_FOO_H
-
-namespace Name {
-class Foo {
-    ...
-}; // class Foo
-} // namespace Name
-
-#endif // ifndef NAME_FOO_H
-~~~
-
-If no namespace is used, do not prepend an underscore, c.f.
-
-~~~ c++
-#ifndef FOO_H
-#define FOO_H
-
-class Foo {
-    ...
-}; // class Foo
-
-#endif // ifndef FOO_H
-~~~
+* Function signatures in `.h` files should include the same parameter names used in the `.cpp` file.
+* The `.h` should be included in the `.cpp` file.
+  * Note that in the case of template classes, you cannot `#include` the `.h` in the `.cpp`, since this is at odds with the process by which template classes are instantiated; as such, in these cases, the `.cpp` should be included at the end of the `.h` file.
 
 ## Declaration Order
 
@@ -177,26 +147,27 @@ Within functions, etc., variable declarations should be placed either at the sta
 
 ## Access Modifiers
 
-Never expose more of a class than should be - in otherwords, if a member variable or function is not `private`, then there should be a good reason for it to be `public` or `protected`.
+Never expose more of a class than should be exposed - in other words, if a member variable or function is not `private`, then there should be a good reason for it to be `public` or `protected`.
 
 
 # Syntax and Semantics
 
 C++ has been around for a long time, and also is a very powerful language. As a result, there are a number of things that you can do which - for the most part - you should generally be unable to do, or at the very least you should avoid doing. These rules are as follows:
 
-* Never override a `virtual` function without specifying that the derived function is also `virtual`. Don't make people hunt through the entire inheritance tree to figure out if something is `virtual` or not. (Seriously: inheritance trees *suck*. Ask anyone who's worked at Facebook about their PHP.)
 * Pointers should be used only for dynamically allocated objects.
-* The appropriate data type should be used for the appropriate data.
-    * Use `bool` for true/false.
-    * Use `size_t` for array indices, not `int`.
+* The appropriate data type should be used for the appropriate data:
+  * e.g. `bool` for true/false, `ptrdiff_t` for pointer arithmetic, `size_t` for values returned by `sizeof`.
+  * Where appropriate, architecture-independent data types should be used, e.g. `uint32_t` for integers.
+
 * Functions may be collapsed into one-liners if and only if they contain no executable statements, e.g. `void foo() {}`.
 * Use base member initialization whenever possible.
 * Use default parameters whenever possible.
 * Think carefully about any overhead that might be involved in a seemingly innocuous operation.
-    * When incrementing and decrementing non-primitive types, it is generally preferable to use the prefix version, both because of the overhead and semantics of postfix.
-    * C++ has some [very complex initialization semantics](http://en.cppreference.com/w/cpp/language/initialization)! As a general rule of thumb, direct initialization is preferred to copy initialization.
+  * When incrementing and decrementing non-primitive types, it is generally preferable to use the prefix version, both because of the overhead and semantics of postfix.
+  * C++ has some [very complex initialization semantics](http://en.cppreference.com/w/cpp/language/initialization)! As a general rule of thumb, direct initialization is preferred to copy initialization.
 * Modern compilers can do a **lot** of work for you that you might not actually want them to do! For fully deterministic behavior, you should use `explicit` constructors and operators when possible.
-    * Avoid using the [`inline`](http://en.cppreference.com/w/cpp/language/inline) keyword unless you understand the implications thereof for compiler optimization, static linking, and dynamic linking.
+  * The [safe bool idiom](http://www.artima.com/cppsource/safebool.html) is one of the many practices that we were able to do away with [when `explicit` was introduced in C++11](http://stackoverflow.com/questions/6242768/).
+  * Avoid using the [`inline`](http://en.cppreference.com/w/cpp/language/inline) keyword unless you understand the implications thereof for compiler optimization, static linking, and dynamic linking.
 * Always use `nullptr` when referring to the null pointer, never `NULL` or `0`.
 * Use `const` liberally *where it makes sense to do so*.
     * A method signature `void goodMethod(const Foo *param);` is very meaningful - it tells the caller that they can expect a `Foo` instance to be the same before and after calling `someMethod()` on it!!
@@ -210,7 +181,7 @@ We expect `SCREAMING_SNAKE_CASE` on constants and `camelCase` on everything else
 Names should also generally correspond to *what* a variable represents and to *what* a function does or returns. To that end, variable names should generally be nouns and function names should generally be adjectives and/or verbs (generally, "is" should prefix boolean accessors, "get" for other accessors, and "set" for mutators), e.g.
 
 ~~~ c++
-size_t size
+uint32_t size
 std::string errorMessage
 bool isEmpty()
 Property getProperty()
@@ -223,19 +194,9 @@ Avoid names which might be ambiguous, e.g. `void setCounterZero()` and `void set
 
 The usage of whitespace is *really* important and is absolutely huge for readability. Use blank lines liberally (but not excessively) to improve readability; it is far more useful to be able to distinguish logical groups of member functions at a glance than to have to scroll for them.
 
-Some other rules:
-
-* Separate binary operators with spaces, e.g. `z = (a + b) + (c * d) / (e + f);`
-* Unary operators should always be joined with their operand, e.g.
-
-  ~~~ c++
-  Foo &cloneInstance(const Foo &srcFoo, Foo &destFoo);
-  ~~~
-* At most one variable may be declared per line.
-
 There are also a number of issues that you should be aware of:
 
-* Trailing whitespace should be trimmed, because it screws with diffing (and by consequence, also messes up Git diffs and thereby can introduce severe complications to merging etc.).
+* Trailing whitespace should be trimmed, because it screws with diffing (and by consequence, also messes up Git diffs and thereby can introduce severe complications to merging etc.). Unfortunately `clang-format` does not support this.
 * In nested templates, prior to C++11, compilers were unable to interpret
 
   ~~~ c++
