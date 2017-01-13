@@ -4,11 +4,13 @@ Note: usage of a staging environment is **strongly** encouraged. See below for i
 
 * Create a new file in the root directory with the name `some-new-file.md`.
 * Make sure the file starts with YAML front matter:
+
   ```yaml
   ---
   layout: default
   title: Some New File
   author: John Doe
+  ---
   ```
 * Add an entry in `_data/navbar_links.md` with a `url` and `text`
   attribute to make the link show up in the navbar header:
