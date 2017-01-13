@@ -129,6 +129,7 @@ The use of both `.h` and `.cpp` files for the same bodies of code means that the
 * Function signatures in `.h` files should include the same parameter names used in the `.cpp` file.
 * The `.h` should be included in the `.cpp` file.
   * Note that in the case of template classes, you cannot `#include` the `.h` in the `.cpp`, since this is at odds with the process by which template classes are instantiated; as such, in these cases, the `.cpp` should be included at the end of the `.h` file.
+* System headers should only be imported from the C++ standard library; it is *not* OK to import anything from the C standard library, particularly as everything in the C standard library has been ported to C++ (e.g. `<cstdlib>` replaces `<stdlib.h>`).
 
 ## Declaration Order
 
