@@ -13,9 +13,3 @@ Last updated for the Spring 2017 semester.
 > We are authors. And one thing about authors is that they have readers... The next time you write a line of code, remember you are an author, writing for readers who will judge your effort.
 >
 > <cite>Robert C. Martin, Clean Code</cite>
-
-
-Links:
-
-* [assignment rubric]({{ "/assignment-rubric/" | relative_url }})
-* [style guidelines]({{ "/style-guidelines/" | relative_url }})
