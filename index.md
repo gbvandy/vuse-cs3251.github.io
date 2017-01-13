@@ -17,5 +17,5 @@ Last updated for the Spring 2017 semester.
 
 Links:
 
-* [assignment rubric](/assignment-rubric/)
-* [style guidelines](/style-guidelines/)
+* [assignment rubric]({{ "/assignment-rubric/" | relative_url }})
+* [style guidelines]({{ "/style-guidelines/" | relative_url }})
