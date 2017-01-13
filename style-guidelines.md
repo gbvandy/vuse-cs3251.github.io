@@ -38,7 +38,16 @@ In general (no matter what programming language), your code must be
   ++c;
   ~~~
 
-But remember: the purpose of these rules is to *enhance* your code, never to make it worse. We have designed these guidelines to be broadly applicable, but there are no rules without exceptions - there will always be judgment calls to make, and we expect you to be able to make the correct ones.
+Remember: the purpose of these rules is to *enhance* your code, never to make it worse. We have designed these guidelines to be broadly applicable, but there are no rules without exceptions - there will always be judgment calls to make, and we expect you to be able to make the correct ones.
+
+## C++ Pitfalls
+
+In addition, you should keep the following pieces of advice in mind:
+* Think carefully about any overhead that might be involved in a seemingly innocuous operation.
+  * When incrementing and decrementing non-primitive types, it is generally preferable to use the prefix version, both because of the overhead and semantics of postfix.
+  * C++ has some [very complex initialization semantics](http://en.cppreference.com/w/cpp/language/initialization)! As a general rule of thumb, direct initialization is preferred to copy initialization.
+* C++ can be at time particularly annoying because of undefined (a.k.a. implementation-specific) behavior. *You will be liable for any errors in your program arising from assumptions about undefined behavior*.
+  * For instance, if you write `methodB(methodA(), methodA())`, there is no guarantee that the two calls to `methodA` will be made in order from left to right (there is in C++17, but we are using the C++11 standard for the purposes of this course).
 
 # Conventions
 
@@ -163,9 +172,6 @@ C++ has been around for a long time, and also is a very powerful language. As a 
 * Functions may be collapsed into one-liners if and only if they contain no executable statements, e.g. `void foo() {}`.
 * Use base member initialization whenever possible.
 * Use default parameters whenever possible.
-* Think carefully about any overhead that might be involved in a seemingly innocuous operation.
-  * When incrementing and decrementing non-primitive types, it is generally preferable to use the prefix version, both because of the overhead and semantics of postfix.
-  * C++ has some [very complex initialization semantics](http://en.cppreference.com/w/cpp/language/initialization)! As a general rule of thumb, direct initialization is preferred to copy initialization.
 * Modern compilers can do a **lot** of work for you that you might not actually want them to do! For fully deterministic behavior, you should use `explicit` constructors and operators when possible.
   * The [safe bool idiom](http://www.artima.com/cppsource/safebool.html) is one of the many practices that we were able to do away with [when `explicit` was introduced in C++11](http://stackoverflow.com/questions/6242768/).
   * Avoid using the [`inline`](http://en.cppreference.com/w/cpp/language/inline) keyword unless you understand the implications thereof for compiler optimization, static linking, and dynamic linking.
