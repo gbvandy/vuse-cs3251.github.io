@@ -141,6 +141,40 @@ The use of both `.h` and `.cpp` files for the same bodies of code means that the
   * Note that in the case of template classes, you cannot `#include` the `.h` in the `.cpp`, since this is at odds with the process by which template classes are instantiated; as such, in these cases, the `.cpp` should be included at the end of the `.h` file.
 * System headers should only be imported from the C++ standard library; it is *not* OK to import anything from the C standard library, particularly as everything in the C standard library has been ported to C++ (e.g. `<cstdlib>` replaces `<stdlib.h>`).
 
+## Include guards
+
+To prevent the preprocessor from including dependencies multiple times, `#include` guards (a.k.a. `#define` guards) must always be used where appropriate.
+
+The WebKit standard specifies that `#pragma once` should be used, which works for their purposes, but since it is simply [a common compiler extension and not actually in the C++ standard](http://stackoverflow.com/questions/23696115/), you are not allowed to use it.
+
+In a `.h` file, they must be named as `NAMESPACE_CLASS_H` (if in a `.cpp`, use `_CPP` as the suffix), c.f.
+
+~~~ c++
+#ifndef NAME_FOO_H
+#define NAME_FOO_H
+
+namespace Name {
+class Foo {
+    ...
+}; // class Foo
+} // namespace Name
+
+#endif // ifndef NAME_FOO_H
+~~~
+
+If no namespace is used, do not prepend an underscore, c.f.
+
+~~~ c++
+#ifndef FOO_H
+#define FOO_H
+
+class Foo {
+    ...
+}; // class Foo
+
+#endif // ifndef FOO_H
+~~~
+
 ## Declaration Order
 
 When defining a class or struct, you should use access modifiers as the primary order, the following list as the secondary order, and grouping by functionality as the ternary order:
