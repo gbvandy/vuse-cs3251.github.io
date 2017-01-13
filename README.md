@@ -17,6 +17,7 @@ Note: usage of a staging environment is **strongly** encouraged. See below for i
   * `url` will correspond to the `href` of the link, and should be relative to
     the root of the website (specifically, relative to `site.baseurl`)
   * `text` will correspond to the text of the link that will be created
+  * the order of the entries determines the order of the links in the navbar
 
   ```yaml
   - url: /some-new-file
