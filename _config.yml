@@ -20,6 +20,8 @@ description: > # this means to ignore newlines until "baseurl:"
 github:
   url: ""
 
+exclude: ["README.md"]
+
 # Build settings
 markdown: kramdown
 kramdown:
