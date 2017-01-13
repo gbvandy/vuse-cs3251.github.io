@@ -195,7 +195,7 @@ Property getProperty()
 void setProperty()
 ~~~
 
-Avoid names which might be ambiguous, e.g. `void setCounterZero()` and `void setCounterToZero()` are preferable to `void zeroCounter()`.
+Avoid names which might be ambiguous, e.g. `void setRelativeZero()` and `void setCounterToZero()` are preferable to `void zeroCounter()`.
 
 # Spacing
 
