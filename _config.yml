@@ -22,7 +22,7 @@ github:
 
 navbar_links: [
   {"url": "/",                      "text": "homepage"},
-  {"url": "/instructors-and-hours", "text": "instructors/hours"},
+  {"url": "/instructors-and-hours", "text": "staff"},
   {"url": "/assignment-rubric",     "text": "rubric"},
   {"url": "/style-guidelines",      "text": "style"},
 ]
