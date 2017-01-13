@@ -19,8 +19,8 @@ Note: usage of a staging environment is **strongly** encouraged. See below for i
   * `text` will correspond to the text of the link that will be created
 
   ```yaml
-  - url: /href-target
-    text: link text
+  - url: /some-new-file
+    text: new file
   ```
 
 ## Staging
