@@ -4,24 +4,23 @@ Note: usage of a staging environment is **strongly** encouraged. See below for i
 
 * Create a new file in the root directory with the name `some-new-file.md`.
 * Make sure the file starts with YAML front matter:
+
   ```yaml
   ---
   layout: default
   title: Some New File
   author: John Doe
+  ---
   ```
-* Add an entry in `_config.yml` under `navbar_links` with a `url` and `text`
+* Add an entry in `_data/navbar_links.md` with a `url` and `text`
   attribute to make the link show up in the navbar header:
   * `url` will correspond to the `href` of the link, and should be relative to
     the root of the website (specifically, relative to `site.baseurl`)
   * `text` will correspond to the text of the link that will be created
 
   ```yaml
-  navbar_links: [
-    ...,
-    {"url": "/href-target", "text": "link text"},
-    ...
-  ]
+  - url: /href-target
+    text: link text
   ```
 
 ## Staging
