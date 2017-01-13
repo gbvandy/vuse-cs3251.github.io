@@ -1,7 +1,8 @@
-> We are authors. And one thing about authors is that they have readers... The next time you write a line of code, remember you are an author, writing for readers who will judge your effort.
->
-> <cite>Robert C. Martin, Clean Code</cite>
-
+---
+layout: default
+title: Style Guidelines
+author: Samuel Lijin
+---
 # Why?
 
 > The ratio of time spent reading code vs. writing code is well over 10 to 1.
@@ -41,28 +42,21 @@ But remember: the purpose of these rules is to *enhance* your code, never to mak
 
 # Conventions
 
-There are a *lot* of coding conventions out there, ranging from the absurd to the controversial. For the purposes of this course, we expect you to comply with the following conventions:
+There are a *lot* of coding conventions out there, ranging from the absurd to the controversial. For the purposes of this course, we will be using a mix of conventions that can be enforced with the `clang-format` linter and in-house rules (where ambiguous, ask, but it is safe to assume that in-house rules take precedence).
 
-* **Indentation** using either a variant of K&R, Allman, or anything else that makes sense in the context of the 21st century.
-    * Use **four spaces** per indentation level. That means no tabs, no 2-space or 8-space indents - sorry if [you're a Richard](https://www.youtube.com/watch?v=SsoOG6ZeyUI). Note that any decent IDE (including Vim and emacs) can be configured to do this for you.
-    * Do not increase indentation levels for namespaces, and use comments to indicate the scope of (seemingly ambiguous) closing braces, c.f.
+## Using `clang-format`
 
-      ~~~ c++
-      namespace Foo {
-      class Bar {
-          ...
-      }; // class Bar
-      } // namespace Foo
-      ~~~
-    * Do not indent access modifiers, c.f.
+You are expected to use `clang-format -style=webkit` to lint your code, which will automatically format your code according to the WebKit coding standard, which can be found [here](https://webkit.org/code-style-guidelines/).
 
-      ~~~ c++
-      class Bar {
-      public:
-          Bar();
-          ...
-      }; // class Bar
-      ~~~
+Alternatively, you may maintain your own [clang-format specification](http://clang.llvm.org/docs/ClangFormatStyleOptions.html).
+
+Note that
+
+* some rules are specific to the WebKit project (e.g. the inclusion of `config.h`) and those may be ignored for the purposes of this course, and
+* the rules about `using` in the WebKit standard should be ignored; we have included guidelines about their usage in the in-house rules.
+
+## In-house Rules
+
 * **Maximum line width** is 100 characters.
 * Use **Javadoc-style comments** in the header file.
     * Such comments are important because they define your API and lay out behavior specifications.
@@ -116,18 +110,10 @@ There are a *lot* of coding conventions out there, ranging from the absurd to th
           ...
       };
       ~~~
-* Always **use braces** to delimit the scope of control-flow statements, even when they can be one-lined, c.f.
-
-  ~~~ c++
-  while (prof.isTalking()) {
-      if (student.isAsleep()) {
-          prof.playPrankOn(student);
-      }
-      else if (student.isFallingAsleep()){
-          prof.giveDirtyLookTo(student);
-      }
-  }
-  ~~~
+* Namespace contamination is not acceptable. This means:
+  * You are not allowed to use `using namespace std;`; nor are you allowed to import the contents of any namespace into the current namespace. You *may* import specific methods/variables with `using std::cout;`.
+  * Global variables are banned.
+  * Use of global functions is limited to `main()`, `friend` operator overloads, and where specified in an assignment.
 
 # Structure
 
@@ -143,12 +129,6 @@ The use of both `.h` and `.cpp` files for the same bodies of code means that the
 * The `.h` and `.cpp` for the same class should bear a filename which matches the name of said class.
 * The order of member fields and functions should be preserved between the `.h` and the `.cpp` files.
 * Declarations of member functions in `.h` files should include the same parameter names used in the `.cpp` file.
-
-Contamination of the global namespace is also absolutely unacceptable which means:
-
-* You are not allowed to use `using namespace std;` (if you must, use `using std::cout;`).
-* Global variables are banned.
-* Use of global functions is limited to `main()` and operator overloads.
 
 ## Header Files
 
