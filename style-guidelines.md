@@ -61,7 +61,8 @@ Alternatively, you may maintain your own [clang-format specification](http://cla
 
 Note that
 
-* some rules are specific to the WebKit project (e.g. the inclusion of `config.h`) and those may be ignored for the purposes of this course, and
+* some rules are specific to the WebKit project (e.g. the inclusion of `config.h`) and those may be ignored for the purposes of this course,
+* contrary to the WebKit standard, we expect you to use `#ifndef`/`#include`/`#endif` instead of `pragma #once` to prevent dependency duplication (see the section on [include guards](#include-guards)), and
 * the rules about `using` in the WebKit standard should be ignored; we have included guidelines about their usage in the in-house rules.
 
 ## In-house Rules
