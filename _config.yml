@@ -24,7 +24,7 @@ navbar_links: [
   {"url": "/",                      "text": "homepage"},
   {"url": "/schedule",              "text": "schedule"},
   {"url": "/instructors-and-hours", "text": "staff"},
-  {"url": "/assignment-rubric",     "text": "rubric"},
+  {"url": "/grading-breakdown",     "text": "grades"},
   {"url": "/style-guidelines",      "text": "style"},
 ]
 
