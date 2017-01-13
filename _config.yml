@@ -21,10 +21,10 @@ github:
   url: ""
 
 navbar_links: [
-  {"url": "/",                  "text": "homepage"},
-  {"url": "/office-hours",      "text": "hours"},
-  {"url": "/assignment-rubric", "text": "rubric"},
-  {"url": "/style-guidelines",  "text": "style"},
+  {"url": "/",                      "text": "homepage"},
+  {"url": "/instructors-and-hours", "text": "instructors/hours"},
+  {"url": "/assignment-rubric",     "text": "rubric"},
+  {"url": "/style-guidelines",      "text": "style"},
 ]
 
 permalink: pretty
