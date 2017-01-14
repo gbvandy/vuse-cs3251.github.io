@@ -21,9 +21,11 @@ github:
   url: ""
 
 navbar_links: [
-  {"url": "/", "text": "homepage"},
-  {"url": "/assignment-rubric", "text": "rubric"},
-  {"url": "/style-guidelines", "text": "style"},
+  {"url": "/",                      "text": "homepage"},
+  {"url": "/schedule",              "text": "schedule"},
+  {"url": "/instructors-and-hours", "text": "staff"},
+  {"url": "/grading-breakdown",     "text": "grades"},
+  {"url": "/style-guidelines",      "text": "style"},
 ]
 
 permalink: pretty
