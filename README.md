@@ -1,6 +1,6 @@
 # Adding a New Page
 
-Note: usage of a staging environment is **strongly** encouraged. See below for instructions.
+Note: usage of a staging environment is **strongly** encouraged. See [CONTRIBUTING.md](CONTRIBUTING.md) for instructions.
 
 * Create a new file in the root directory with the name `some-new-file.md`.
 * Make sure the file starts with YAML front matter:
@@ -23,27 +23,6 @@ Note: usage of a staging environment is **strongly** encouraged. See below for i
   - url: /some-new-file
     text: new file
   ```
-
-## Staging
-
-It is strongly recommended that you fork this repository and use your fork as a staging environment:
-
-* Fork this repository.
-* Configure your fork to be a GitHub Project Page, built off `master`.
-* Push changes to *your* fork.
-* Pull request into this repository once changes are deployed on your fork and verified good.
-
-Note that you should have an understanding of how `site.baseurl` works when deploying to your fork; specifically, any paths relative to the root of your website should be piped through the `relative_url` liquid template tag. In other words, where you might write
-
-```markdown
-[link relative to website root](/relative-to-website-root)
-```
-
-you should actually write
-
-```markdown
-[link relative to website root]({{ "/relative-to-website-root" | relative_url }})
-```
 
 # Running the Website Locally
 
