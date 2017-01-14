@@ -33,8 +33,17 @@ It is strongly recommended that you fork this repository and use your fork as a 
 * Push changes to *your* fork.
 * Pull request into this repository once changes are deployed on your fork and verified good.
 
-Note that you should have an understanding of how `site.baseurl` works when deploying to your fork.
+Note that you should have an understanding of how `site.baseurl` works when deploying to your fork; specifically, any paths relative to the root of your website should be piped through the `relative_url` liquid template tag. In other words, where you might write
 
+```markdown
+[link relative to website root](/relative-to-website-root)
+```
+
+you should actually write
+
+```markdown
+[link relative to website root]({{ "/relative-to-website-root" | relative_url }})
+```
 
 # Running the Website Locally
 
