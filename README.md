@@ -1,6 +1,6 @@
 # Adding a New Page
 
-Note: usage of a staging environment is **strongly** encouraged. See [CONTRIBUTING.md](CONTRIBUTING.md) for instructions.
+Note: usage of a staging environment is **strongly** encouraged. See [CONTRIBUTING.md](.github/CONTRIBUTING.md) for instructions.
 
 * Create a new file in the root directory with the name `some-new-file.md`.
 * Make sure the file starts with YAML front matter:
