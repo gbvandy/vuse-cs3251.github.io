@@ -7,7 +7,7 @@ author: Graham Hemingway
 # Schedule for CS3251: Spring 2017
 
 
-Here is a rough outline of the course schedule (this is subject to change at any time!!!):
+Here is a rough outline of the course schedule (this is subject to change at any time).  ***Note: All assignments are due by the beginning of class the day the assignments are due.  Don't be late!!!***
 
 \* means there is probably a quiz that day.
 
