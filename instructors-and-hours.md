@@ -6,15 +6,15 @@ author: Samuel Lijin
 # Office Hours by Time
 * Monday
   * 9:00am - 10:00am: FGH atrium, Graham
-  * 12:00pm - 1:30pm: location TBD, Venki
+  * 12:00pm - 1:30pm: FGH 230, Venki
   * 1:30pm - 3:30pm: FGH 201, Brittany
-  * 3:30pm - 5:00pm: location TBD, Ram
+  * 3:30pm - 5:00pm: FGH 314, Ram
 * Tues
   * 9:30am - 10:30am: FGH atrium, Graham
   * 2:30pm - 4:30pm: FGH 201, Eric
 * Wed
   * 1:00pm - 3:00pm: FGH 201, David Y.
-  * 3:30pm - 5:00pm: location TBD, Ram
+  * 3:30pm - 5:00pm: FGH 314, Ram
 * Thurs
   * 11:00am - 12:00pm: FGH 201, Brittany
   * 1:30pm - 2:30pm: FGH 201, Ankur
@@ -23,7 +23,7 @@ author: Samuel Lijin
 * Fri
   * 9:00am - 10:00am: FGH atrium, Graham
   * 12:00pm - 2:00pm: FGH 201, Juan
-  * 2:00pm - 4:00pm: location TBD, Venki
+  * 2:00pm - 4:00pm: FGH 230, Venki
 
 # Instructors
 
@@ -36,11 +36,11 @@ author: Samuel Lijin
 ## TAs
 * Venkataramana Nagarajan
   * venkataramana.nagarajan@vanderbilt.edu
-  * TBD
+  * FGH 230
   * M 12:00pm - 1:30pm, F 2:00pm - 4:00pm
 * Ramanathan Kumarappan
   * ramanathan.kumarappan@vanderbilt.edu
-  * TBD
+  * FGH 314
   * MW 3:30pm - 5:00pm
 
 ## Graders
