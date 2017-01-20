@@ -23,7 +23,8 @@ Last updated for the Spring 2017 semester.
 * [Git](https://git-scm.com)
 
 ## Reference Materials
-*  C++ Primer (5th Ed.) by Lippman, et. al.
-*  Design Patterns by Gamma, Helm, et. al.
-*  Effective Modern C++ by Meyers
-*  The C++ Programming Language by Stroustrup
+* C++ Primer (5th Ed.) by Lippman, et. al.
+* Design Patterns by Gamma, Helm, et. al.
+* Effective Modern C++ by Meyers
+* The C++ Programming Language by Stroustrup
+* Pro Git by Chacon and Straub ([link](https://git-scm.com/book/en/))
