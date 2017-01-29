@@ -53,7 +53,7 @@ Here is a rough outline of the course schedule (this is subject to change at any
 
 20th (Mon): Iterators 
 
-22nd (Wed): Iterators 2
+22nd (Wed): Iterators 2 -- `HW #3 Due`
 
 24th (Fri): Standard Template Library - Containers 1
 
@@ -71,7 +71,7 @@ Here is a rough outline of the course schedule (this is subject to change at any
 
 10th (Fri): No Class - Spring Break
 
-13th (Mon\*): Introduction to Patterns
+13th (Mon\*): Introduction to Patterns -- `HW #4 Due`
 
 15th (Wed): Adapter Pattern
 
@@ -79,7 +79,7 @@ Here is a rough outline of the course schedule (this is subject to change at any
 
 20th (Mon\*): Observer Pattern
 
-22nd (Wed): Singleton Pattern
+22nd (Wed): Singleton Pattern -- `HW #5 Due`
 
 24th (Fri): Composite Pattern
 
@@ -91,7 +91,7 @@ Here is a rough outline of the course schedule (this is subject to change at any
 
 ## April
 
-3rd (Mon\*): Visitor Pattern
+3rd (Mon\*): Visitor Pattern -- `HW #6 Due`
 
 5th (Wed): Command Pattern
 
@@ -99,7 +99,7 @@ Here is a rough outline of the course schedule (this is subject to change at any
 
 10th (Mon\*): Abstract Factory Pattern
 
-12th (Wed): Reactor Pattern
+12th (Wed): Reactor Pattern -- `HW #7 Due`
 
 14th (Fri):  State & Template Method
 
@@ -107,6 +107,6 @@ Here is a rough outline of the course schedule (this is subject to change at any
 
 19th (Wed): TBD
 
-21st (Fri): TBD
+21st (Fri): TBD -- `HW #8 Due`
 
 24th (Mon): Final Exam Review
