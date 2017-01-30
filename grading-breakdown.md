@@ -63,7 +63,7 @@ Listed below are rules that will govern how your submissions will be graded.
    failure to enable Travis builds,
 1. -20% for failure to pass all tests; proportional credit will be awarded for
    all successful tests,
-1. C
+1. -10% for failure to conform to style guidelines
 1. D
 1. E
 1. F
